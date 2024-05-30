@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<style>
+        table, td {
+            border:1px solid black;
+            text-align: left;
+        }
+        th {
+            border:1px solid black;
+            text-align: center;
+        }
+    </style>
+    <title>Appelli d'esame</title>
+</head>
+<body>
+    <table>
+        <caption id="Titolo">Appelli d'esame</caption>
+        <tr>
+            <th scope="col" id="Giorni">Giorni</th>
+            <th scope="col" id="Aula">Aula</th>
+            <th scope="col" id="Orario1">9:00-10:00</th>
+            <th scope="col" id="Orario2">10:00-11:00</th>
+            <th scope="col" id="Orario3">11:00-12:00</th>
+        </tr>
+        <tr>
+            <th scope="row" rowspan="2" id="Lundei">Lunedi</th>
+            <th scope="row" id="Aula-1A">1A</th>
+            <td colspan="2" headers="Aula-1A">Sistemi Operativi</td>
+            <td headers="Aula-1A">Diritto</td>
+        </tr>
+        <tr>
+            <th scope="row" id="Aula-1B">1B</th>
+            <td headers="Aula-1B">Reti Telco</td>
+            <td colspan="2" headers="Aula-1B">Basi Dati</td>
+        </tr>
+        <tr>
+            <th scope="row" rowspan="2" id="Martedi">Martedi</th>
+            <th scope="row" id="Aula-2A">2A</th>
+            <td headers="Aula-2A">Prog</td>
+            <td headers="Aula-2A">Anal Mat</td>
+            <td headers="Aula-2A">Algor</td>
+        </tr>
+        <tr>
+            <th scope="row" id="Aula-2B">2B</th>
+            <td colspan="2" headers="Aula-2B">Tecno Web</td>
+            <td headers="Aula-2B">Prog</td>
+        </tr>
+    </table>
+</body>

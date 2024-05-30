@@ -1,0 +1,50 @@
+header{
+    background-color: lightgreen;
+    color: darkgreen;
+    box-shadow: 5px 5px 5px gray;
+    padding: 10px;
+    border-color: darkgreen;
+    border : 2px;
+    border-style: dotted;
+    text-align: center;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 100%;
+}
+
+nav{
+    background-color: lightgreen;
+    box-shadow: 5px 5px 5px gray;
+    padding: 10px;
+    border : 2px;
+    border-color: darkgreen;
+    border-style: dotted;
+    text-align: left;
+    float: right;
+    margin-top: 14px;
+    font-family: Arial;
+    font-size: 100%;
+    width: 20%;
+
+}
+
+section{
+    text-align: left;
+    margin-right: 25%;
+    font-family: Arial;
+    font-size: 100%;
+    padding-left: 0px;
+}
+
+footer{
+    background-color: lightgreen;
+    color: darkgreen;
+    box-shadow: 5px 5px 5px gray;
+    padding: 10px;
+    border : 2px;
+    border-color: darkgreen;
+    border-style: dotted;
+    text-align: center;
+    font-family: Arial;
+    font-size: 100%;
+}

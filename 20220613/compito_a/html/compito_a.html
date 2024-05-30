@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <link rel="stylesheet" href="../CSS/style.css">
+        <title>Acquisto Libri</title>
+    </head>
+    <body>
+        <h1>Acquisto Libri</h1>
+        <form method="get">
+            <fieldset>
+                <legend>Scelta Libro</legend>
+                <ul>
+                    <li>
+                        <label for="libri">Scegli il libro</label>
+                        <select id="libri" name="libri">
+                        <option value="Libro1">Sistemi operativi. Concetti ed esempi, di Abraham Silberschatz et al.</option>
+                        <option value="Libro2">Linguaggi di programmazione. Principi e paradigmi, di Maurizio Gabbrielli e Simone Martini</option>
+                        <option value="Libro3">I moderni sistemi operativi, di Andrew Tanenbaum</option>
+                        <option value="Libro4">Fondamenti di reti di calcolatori, di Andrew Tanenbaum</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="copertina">Scegli la copertina</label>
+                        <select id="copertina" name="copertina">
+                        <option value="flessibile">copertina flessibile</option>
+                        <option value="rigida">coperitna rigida</option>
+                        <option value="digitale">formato elettronico</option>
+                        </select>
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <legend>Dati Anagrafici</legend>
+                <ul>
+                    <li>
+                        <input type="text" id="nome" name="nome">
+                        <label for="nome">Nome</label>
+                    </li>
+                    <li>
+                        <input type="text" id="cognome" name="cognome">
+                        <label for="cognome">Cognome</label>
+                    </li>
+                    <li>
+                        <input type="number" id="numeroCivico" name="numeroCivico">
+                        <label for="numeroCivico">Numero Civico</label>
+                    </li>
+                    <li>
+                        <input type="text" id="citta" name="citta">
+                        <label for="citta">Città</label>
+                    </li>
+                    <li>
+                        <input type="text" id="provincia" name="provincia">
+                        <label for="provincia">Provincia</label>
+                    </li>
+                    <li>
+                        <input type="number" id="cap" name="cap">
+                        <label for="cap">CAP</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="orarioFlessibile" name="orario" value="flessibile">
+                        <label for="orarioFlessibile">Orario Flessibile</label>
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <legend>Metodo di Pagamento</legend>
+                <ul>
+                    <li>
+                        <input type="radio" id="cartaCredito" name="metodoPagamento" value="cartaCredito">
+                        <label for="cartaCredito">Carta di Credito</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="bonifico" name="metodoPagamento" value="bonifico">
+                        <label for="bonifico">Bonifico</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="paypal" name="metodoPagamento" value="paypal">
+                        <label for="paypal">Paypal</label>
+                    </li>
+                </ul>
+            </fieldset>
+            <button type="submit">Acquista</button>
+            <button type="reset">Annulla</button>
+        </form>
+    </body>
+</html>
