@@ -10,5 +10,5 @@ $("button").click(function(){
     cont++;
     let response = fetch("../php/compito_a.php?cont="+cont,{method: "GET"});
     let array= response.json();
-    return array;
+    console.log(array);
 });
