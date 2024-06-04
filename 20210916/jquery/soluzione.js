@@ -8,7 +8,6 @@ $(document).ready(function(){
           const cellaEvidenziata = $(".tabellone td.evidenziata");
 
           $(".tabellone td").css("background-color", "white");
-          $(this).css("background-color", "#cacaca");
 
           // Toggle classe "evidenziata" sulla cella cliccata
           cellaCliccata.toggleClass("evidenziata");
@@ -16,6 +15,9 @@ $(document).ready(function(){
           // Se c'è una cella evidenziata, deselezionala
           if (cellaEvidenziata.length > 0) {
             cellaEvidenziata.removeClass("evidenziata");
+
+          }else{
+            $(this).css("background-color", "#cacaca");
           }
         });
       
@@ -31,10 +33,10 @@ $(document).ready(function(){
           } else {
             // Inserisci il numero nella cella evidenziata
             cellaEvidenziata.text(cellaCliccata.text());
-      
-            // Deseleziona la cella evidenziata e visualizza messaggio nel log
-            cellaEvidenziata.removeClass("evidenziata");
+            
             $(".log").text("Numero inserito correttamente");
+            cellaEvidenziata.removeClass("evidenziata");
+            cellaEvidenziata.css("background-color", "white");
           }
         });
 });
