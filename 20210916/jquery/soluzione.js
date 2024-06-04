@@ -6,7 +6,10 @@ $(document).ready(function(){
           // Recupero cella cliccata e cella evidenziata
           const cellaCliccata = $(this);
           const cellaEvidenziata = $(".tabellone td.evidenziata");
-          
+
+          $(".tabellone td").css("background-color", "white");
+          $(this).css("background-color", "#cacaca");
+
           // Toggle classe "evidenziata" sulla cella cliccata
           cellaCliccata.toggleClass("evidenziata");
       
