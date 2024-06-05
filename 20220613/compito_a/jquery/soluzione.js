@@ -8,7 +8,7 @@ $(Document).ready(function(){
 
     $("button").click(function(){
         cont++;
-        let response = fetch("../php/compito_a.php?cont="+cont,{method: "GET"});
+        let response = fetch("../php/nuovaPartita.php?cont="+cont,{method: "GET"});
         let array= response.json();
         console.log(array);
         for(let i=0; i<array.lenght; i++){
@@ -27,9 +27,9 @@ $(Document).ready(function(){
         const riga = document.getElementById("riga").value;
         const colonna = document.getElementById("colonna").value;
         const valore = document.getElementById("valore").value;
+        let response = fetch("../php/nuovaPartita.php?cont="+cont,{method: "GET"});
         let valoreFinale=String();
         if(riga > 0 && riga <10 && colonna > 0 && colonna < 10 && valore > 0 && valore < 10){
-            let response = fetch("../php/compito_a.php?cont="+cont,{method: "GET"});
             let array= response.json();
             console.log(array);
             for(let i=0; i<array.lenght; i++){
@@ -46,6 +46,7 @@ $(Document).ready(function(){
                 }
                 $("table").pend("</tr>");
             }
+            let response = fetch("../php/controlloRisultato.php?ris="+valoreFinale,{method: "GET"});
         }else{
             alert ("Errore");
         }
