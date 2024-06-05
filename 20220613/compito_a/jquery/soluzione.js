@@ -9,7 +9,7 @@ $(Document).ready(function(){
     $("button").click(function(){
         $cookies=document.cookie;
         if($cookies.lenght==0){
-            document.cookie="id="+cont;
+            document.cookie="id=2";
         }else{
             let array=$cookies.split(";");
             let trovato=false;
@@ -20,7 +20,7 @@ $(Document).ready(function(){
                 }
             }
             if(!trovato){
-                document.cookie="id="+cont;
+                document.cookie="id="+cont+1;
             }
         }
         let response = fetch("../php/nuovaPartita.php",{method: "GET"});
