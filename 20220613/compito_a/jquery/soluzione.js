@@ -7,24 +7,8 @@ $(Document).ready(function(){
 
 
     $("button").click(function(){
-        let response = fetch("../php/getId.php",{method: "GET"});
-        alert(response);
-        let id = response.json();
-        alert(id[0]);
-        id++;
-        response = fetch("../php/nuovaPartita.php?id="+id,{method: "GET"});
-        const array = response.json();
-        console.log(array);
-        for(let i=0; i<array.lenght; i++){
-            $("table").pend("<tr>");
-            let cells=array[i];
-            for(let j=0; j<cells.lenght; j++){
-                $("table").pend("<td>"+cells[j]+"</td>");
-            }
-            $("table").pend("</tr>");
-        }
-        $("form").show();
-        document.getElementById("form").reset();
+        let id=getId();
+        getNuovaPartita();
     });
 
     $("Aggiugi").click(function(){
@@ -58,3 +42,28 @@ $(Document).ready(function(){
     });
 
 });
+
+async function getId(){
+    let response = fetch("../php/getId.php",{method: "GET"});
+    alert(response);
+    let id = response.json();
+    alert(id[0]);
+    id++;
+    return id;
+}
+
+async function getNuovaPartita(){
+    response = fetch("../php/nuovaPartita.php?id="+id,{method: "GET"});
+        const array = response.json();
+        console.log(array);
+        for(let i=0; i<array.lenght; i++){
+            $("table").pend("<tr>");
+            let cells=array[i];
+            for(let j=0; j<cells.lenght; j++){
+                $("table").pend("<td>"+cells[j]+"</td>");
+            }
+            $("table").pend("</tr>");
+        }
+        $("form").show();
+        document.getElementById("form").reset();
+}
