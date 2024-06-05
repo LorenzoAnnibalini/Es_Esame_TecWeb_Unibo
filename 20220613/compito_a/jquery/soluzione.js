@@ -57,9 +57,9 @@ async function getNuovaPartita(id){
     response = await fetch("../php/nuovaPartita.php?id="+id,{method: "GET"});
     const array = await response.json();
     let cont=0;
-    for(let i=0; i<array.lenght; i++){
+    for(let i=0; i<9; i++){
         $("table").append("<tr>");
-        for(let j=0; j<cells.lenght; j++){
+        for(let j=0; j<9; j++){
             $("table").append("<td>"+array[cont]+"</td>");
             cont++;
         }
