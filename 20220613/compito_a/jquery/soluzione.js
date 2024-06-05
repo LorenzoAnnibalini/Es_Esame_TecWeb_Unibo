@@ -10,7 +10,7 @@ $(Document).ready(function(){
         let response = fetch("../php/getId.php",{method: "GET"});
         alert(response);
         let id = response.json();
-        alert(id);
+        alert(id[0]);
         id++;
         response = fetch("../php/nuovaPartita.php?id="+id,{method: "GET"});
         const array = response.json();
