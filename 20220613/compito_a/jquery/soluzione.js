@@ -14,8 +14,16 @@ $(Document).ready(function(){
         const riga = document.getElementById("riga").value;
         const colonna = document.getElementById("colonna").value;
         const valore = document.getElementById("valore").value;
+        let cont=0;
         if(riga!=0 && colonna!=0 && valore!=0){
             const nuovoArray = aggiungi(riga, colonna, valore);
+            $("table").empty();
+            $("table").append("<tr>");
+            for(let j=0; j<9; j++){
+                $("table").append("<td>"+nuovoArray[cont]+"</td>");
+                cont++;
+            }
+            $("table").append("</tr>");
         }
         
     });
