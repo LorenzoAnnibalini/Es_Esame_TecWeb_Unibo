@@ -47,9 +47,10 @@ async function getId(){
     const response = await fetch("../php/getId.php",{method: "GET"});
     alert(response);
     let id = await response.json();
-    alert(id[0]);
-    id++;
-    return id;
+    alert(id);
+    let num = id.lenght;
+    alert(num);
+    return num;
 }
 
 async function getNuovaPartita(id){
