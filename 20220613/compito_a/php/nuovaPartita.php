@@ -1,4 +1,5 @@
 <?php
+    setcookie("id", $_REQUEST["cont"], time() + (86400 * 30), "/");
     $conn=new mysqli("localhost","root","","esami");
     $id = $_REQUEST["cont"];
     $string;
