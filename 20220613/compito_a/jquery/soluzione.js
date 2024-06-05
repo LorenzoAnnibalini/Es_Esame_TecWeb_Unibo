@@ -7,31 +7,10 @@ $(Document).ready(function(){
 
 
     $("button").click(function(){
-        $cookies=document.cookie;
-        if($cookies.lenght==0){
-            document.cookie="id=2";
-            alert("Prima partita");
-            alert(document.cookie);
-        }else{
-            alert(document.cookie);
-            let array=$cookies.split(";");
-            alert(array);
-            let trovato=false;
-            for(let i=0; i<array.lenght; i++){
-                if(array[i].split("=")[0]=="id"){
-                    cont=array[i].split("=")[1];
-                    alert(cont);
-                    trovato=true;
-                }
-            }
-            if(!trovato){
-                document.cookie="id=2";
-            }else{
-                document.cookie="id="+cont+1;
-            }
-        }
-        let response = fetch("../php/nuovaPartita.php",{method: "GET"});
-        let array= response.json();
+        let response = fetch("../php/getId.php",{method: "GET"});
+        let id = response.json().lenght;
+        id++;
+        response = fetch("../php/nuovaPartita.php?id="+id,{method: "GET"});
         console.log(array);
         for(let i=0; i<array.lenght; i++){
             $("table").pend("<tr>");
