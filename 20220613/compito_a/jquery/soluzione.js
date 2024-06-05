@@ -56,11 +56,12 @@ async function getId(){
 async function getNuovaPartita(id){
     response = await fetch("../php/nuovaPartita.php?id="+id,{method: "GET"});
     const array = await response.json();
+    let cont=0;
     for(let i=0; i<array.lenght; i++){
         $("table").append("<tr>");
-        let cells=array[i];
         for(let j=0; j<cells.lenght; j++){
-            $("table").append("<td>"+cells[j]+"</td>");
+            $("table").append("<td>"+array[cont]+"</td>");
+            cont++;
         }
         $("table").append("</tr>");
     }
