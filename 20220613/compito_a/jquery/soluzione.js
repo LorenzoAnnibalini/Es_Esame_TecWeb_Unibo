@@ -8,6 +8,7 @@ $(Document).ready(function(){
 
     $("button").click(function(){
         let response = fetch("../php/getId.php",{method: "GET"});
+        alert(response);
         let id = response.json().lenght;
         id++;
         response = fetch("../php/nuovaPartita.php?id="+id,{method: "GET"});
