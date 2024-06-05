@@ -46,10 +46,10 @@ $(Document).ready(function(){
 async function getId(){
     let num;
     const response = await fetch("../php/getId.php",{method: "GET"});
-    alert(response);
     const id = await response.json();
     alert(id.length);
-    num=id.length+1;
+    num=id.length;
+    num++;
     return num;
 }
 
