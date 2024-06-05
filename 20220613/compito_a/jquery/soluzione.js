@@ -57,12 +57,12 @@ async function getNuovaPartita(id){
     response = await fetch("../php/nuovaPartita.php?id="+id,{method: "GET"});
     const array = await response.json();
     for(let i=0; i<array.lenght; i++){
-        $("table").pend("<tr>");
+        $("table").append("<tr>");
         let cells=array[i];
         for(let j=0; j<cells.lenght; j++){
-            $("table").pend("<td>"+cells[j]+"</td>");
+            $("table").append("<td>"+cells[j]+"</td>");
         }
-        $("table").pend("</tr>");
+        $("table").append("</tr>");
     }
     $("form").show();
     document.getElementById("form").reset();
