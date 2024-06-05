@@ -56,7 +56,6 @@ async function getId(){
 async function getNuovaPartita(id){
     response = await fetch("../php/nuovaPartita.php?id="+id,{method: "GET"});
     const array = await response.json();
-    console.log(array);
     for(let i=0; i<array.lenght; i++){
         $("table").pend("<tr>");
         let cells=array[i];
