@@ -44,7 +44,7 @@ $(Document).ready(function(){
 });
 
 async function getId(){
-    let response = fetch("../php/getId.php",{method: "GET"});
+    let response = await fetch("../php/getId.php",{method: "GET"});
     alert(response);
     let id = response.json();
     alert(id[0]);
@@ -53,7 +53,7 @@ async function getId(){
 }
 
 async function getNuovaPartita(){
-    response = fetch("../php/nuovaPartita.php?id="+id,{method: "GET"});
+    response = await fetch("../php/nuovaPartita.php?id="+id,{method: "GET"});
         const array = response.json();
         console.log(array);
         for(let i=0; i<array.lenght; i++){
