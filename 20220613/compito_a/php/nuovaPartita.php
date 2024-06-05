@@ -1,6 +1,7 @@
 <?php
     $conn=new mysqli("localhost","root","","esami");
     $id = $_REQUEST["id"];
+    setcookie("id", "", time() - 3600);
     setcookie("id", $id, time() + 3600);
     $string;
     $statoiniziale = array();
