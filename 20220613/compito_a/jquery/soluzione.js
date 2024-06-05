@@ -16,7 +16,7 @@ $(Document).ready(function(){
         const valore = document.getElementById("valore").value;
 
         let cont=0;
-        if(riga!=0 && colonna!=0 && valore!=0){
+        if(riga>=0 && riga<9 && colonna>=0 && colonnca<9 && valore>0 && valore<10){
             const nuovoArray = aggiungi(riga, colonna, valore);
             $("table").empty();
             $("table").append("<tr>");
