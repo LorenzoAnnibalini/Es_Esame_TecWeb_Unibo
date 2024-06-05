@@ -10,12 +10,17 @@ $(Document).ready(function(){
         $cookies=document.cookie;
         if($cookies.lenght==0){
             document.cookie="id=2";
+            alert("Prima partita");
+            alert(document.cookie);
         }else{
+            alert(document.cookie);
             let array=$cookies.split(";");
+            alert(array);
             let trovato=false;
             for(let i=0; i<array.lenght; i++){
                 if(array[i].split("=")[0]=="id"){
                     cont=array[i].split("=")[1];
+                    alert(cont);
                     trovato=true;
                 }
             }
