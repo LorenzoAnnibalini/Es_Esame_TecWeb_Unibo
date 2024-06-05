@@ -1,4 +1,4 @@
-var cont=0;
+
 
 $(Document).ready(function(){
     $("form").hide();
@@ -7,8 +7,23 @@ $(Document).ready(function(){
 
 
     $("button").click(function(){
-        cont++;
-        let response = fetch("../php/nuovaPartita.php?cont="+cont,{method: "GET"});
+        $cookies=document.cookie;
+        if($cookies.lenght==0){
+            document.cookie="id="+cont;
+        }else{
+            let array=$cookies.split(";");
+            let trovato=false;
+            for(let i=0; i<array.lenght; i++){
+                if(array[i].split("=")[0]=="id"){
+                    cont=array[i].split("=")[1];
+                    trovato=true;
+                }
+            }
+            if(!trovato){
+                document.cookie="id="+cont;
+            }
+        }
+        let response = fetch("../php/nuovaPartita.php",{method: "GET"});
         let array= response.json();
         console.log(array);
         for(let i=0; i<array.lenght; i++){
@@ -27,7 +42,7 @@ $(Document).ready(function(){
         const riga = document.getElementById("riga").value;
         const colonna = document.getElementById("colonna").value;
         const valore = document.getElementById("valore").value;
-        let response = fetch("../php/nuovaPartita.php?cont="+cont,{method: "GET"});
+        let response = fetch("../php/nuovaPartita.php",{method: "GET"});
         let valoreFinale=String();
         if(riga > 0 && riga <10 && colonna > 0 && colonna < 10 && valore > 0 && valore < 10){
             let array= response.json();
