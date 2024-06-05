@@ -48,7 +48,9 @@ async function getId(){
     alert(response);
     let id = await response.json();
     alert(id);
-    let num = id.lenght;
+    for(let i=0; i<id.lenght; i++){
+        num=id[i];
+    }
     alert(num);
     return num;
 }
