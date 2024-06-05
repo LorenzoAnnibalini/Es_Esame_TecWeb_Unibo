@@ -13,6 +13,7 @@ $(Document).ready(function(){
         alert(id);
         id++;
         response = fetch("../php/nuovaPartita.php?id="+id,{method: "GET"});
+        const array = response.json();
         console.log(array);
         for(let i=0; i<array.lenght; i++){
             $("table").pend("<tr>");
