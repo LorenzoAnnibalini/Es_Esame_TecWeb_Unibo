@@ -50,7 +50,7 @@ async function getNuovaPartita(){
     alert(id.length);
     num=id.length;
     num++;
-    const responseArray = await fetch("../php/nuovaPartita.php?id="+id,{method: "GET"});
+    const responseArray = await fetch("../php/nuovaPartita.php?id="+num,{method: "GET"});
     const array = await responseArray.json();
     let cont=0;
     for(let i=0; i<9; i++){
