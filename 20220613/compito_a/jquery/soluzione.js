@@ -44,9 +44,9 @@ $(Document).ready(function(){
 });
 
 async function getId(){
-    let response = await fetch("../php/getId.php",{method: "GET"});
+    const response = await fetch("../php/getId.php",{method: "GET"});
     alert(response);
-    let id = response.json();
+    let id = await response.json();
     alert(id[0]);
     id++;
     return id;
