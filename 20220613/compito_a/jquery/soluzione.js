@@ -45,13 +45,13 @@ $(Document).ready(function(){
 
 async function getNuovaPartita(){
     let num;
-    const response = await fetch("../php/getId.php",{method: "GET"});
-    const id = await response.json();
+    const responseId = await fetch("../php/getId.php",{method: "GET"});
+    const id = await responseId.json();
     alert(id.length);
     num=id.length;
     num++;
-    response = await fetch("../php/nuovaPartita.php?id="+id,{method: "GET"});
-    const array = await response.json();
+    const responseArray = await fetch("../php/nuovaPartita.php?id="+id,{method: "GET"});
+    const array = await responseArray.json();
     let cont=0;
     for(let i=0; i<9; i++){
         $("table").append("<tr>");
