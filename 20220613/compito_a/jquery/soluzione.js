@@ -49,8 +49,7 @@ async function getId(){
     alert(response);
     const id = await response.json();
     alert(id.length);
-    num=id.length;
-    alert(num);
+    num=id.length+1;
     return num;
 }
 
