@@ -1,10 +1,10 @@
 <?php
-    if(isset($_COOKIE["id"])) {
+    $id = $_COOKIE["id"];
+    $riga=$_REQUEST["riga"];
+    $colonna=$_REQUEST["colonna"];
+    $valore=$_REQUEST["valore"];
+    if(isset($_COOKIE["id"])&& $_COOKIE["id"]==$id) {
         $conn=new mysqli("localhost","root","","esami");
-        $id = $_COOKIE["id"];
-        $riga=$_REQUEST["riga"];
-        $colonna=$_REQUEST["colonna"];
-        $valore=$_REQUEST["valore"];
 
         $nuovoArray=array();
 
