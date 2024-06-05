@@ -20,6 +20,8 @@ $(Document).ready(function(){
                 }
             }
             if(!trovato){
+                document.cookie="id=2";
+            }else{
                 document.cookie="id="+cont+1;
             }
         }
