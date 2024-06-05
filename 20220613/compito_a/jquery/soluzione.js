@@ -8,7 +8,7 @@ $(Document).ready(function(){
 
     $("button").click(function(){
         let id=getId();
-        getNuovaPartita();
+        getNuovaPartita(id);
     });
 
     $("Aggiugi").click(function(){
@@ -52,7 +52,7 @@ async function getId(){
     return id;
 }
 
-async function getNuovaPartita(){
+async function getNuovaPartita(id){
     response = await fetch("../php/nuovaPartita.php?id="+id,{method: "GET"});
         const array = response.json();
         console.log(array);
