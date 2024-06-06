@@ -27,19 +27,19 @@ $(Document).ready(function(){
 
 async function aggiungi(riga, colonna, valore){
     alert("inizio");
+    let num;
     const responseId = await fetch("../php/getId.php",{method: "GET"});
     const id = await responseId.json();
     alert(id.length);
-    let num=id.length;
+    num=id.length;
     alert("modifica id:"+num);
     const response = await fetch("../php/controlloRisultato.php?riga="+riga+"&colonna="+colonna+"&valore="+valore+"&id="+num,{method: "GET"});
-    const result = await response.json();
+    const array = await response.json();
     let cont=0;
-    $("table").empty();
     for(let i=0; i<9; i++){
         $("table").append("<tr>");
         for(let j=0; j<9; j++){
-            $("table").append("<td>"+nuovoArray[cont]+"</td>");
+            $("table").append("<td>"+array[cont]+"</td>");
             cont++;
         }
         $("table").append("</tr>");
