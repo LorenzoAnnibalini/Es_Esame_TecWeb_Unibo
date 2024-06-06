@@ -30,7 +30,7 @@ async function aggiungi(riga, colonna, valore){
     const responseId = await fetch("../php/getId.php",{method: "GET"});
     const id = await responseId.json();
     alert(id.length);
-    const num=id.length;
+    let num=id.length;
     alert("modifica id:"+num);
     const response = await fetch("../php/controlloRisultato.php?riga="+riga+"&colonna="+colonna+"&valore="+valore+"&id="+num,{method: "GET"});
     const result = await response.json();
