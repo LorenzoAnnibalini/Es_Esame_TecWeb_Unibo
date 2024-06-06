@@ -33,6 +33,7 @@ async function aggiungi(riga, colonna, valore){
     const responseId = await fetch("../php/getId.php",{method: "GET"});
     const id = await responseId.json();
     const num=id.length;
+    alert(id);
     const response = await fetch("../php/controlloRisultato.php?riga="+riga+"&colonna="+colonna+"&valore="+valore+"&id="+num,{method: "GET"});
     const result = await responde.json();
     return result;
