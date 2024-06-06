@@ -11,6 +11,7 @@
         $sql="SELECT `statoiniziale` FROM `sudoku` WHERE `id`='".$id."'";
         $result = $conn -> query($sql);
         if ($result -> num_rows >0){
+            echo ($result[1]);
             for($i=0; $i<9*9; $i++){
                 if($i==$riga*9+$colonna){
                     $nuovoArray[$i]=$valore;
