@@ -1,5 +1,3 @@
-
-
 $(Document).ready(function(){
     $("form").hide();
     $("span").hide();
