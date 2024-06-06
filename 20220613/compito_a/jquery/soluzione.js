@@ -8,21 +8,17 @@ $(Document).ready(function(){
         getNuovaPartita();
     });
 
-    $("Aggiugi").click(function(){
+    $("form").submit(function(){
         const riga = document.getElementById("riga").value;
         const colonna = document.getElementById("colonna").value;
         const valore = document.getElementById("valore").value;
 
+        alert(riga+" "+colonna+" "+valore);
+
         let cont=0;
-        if(riga>=0 && riga<9 && colonna>=0 && colonnca<9 && valore>0 && valore<10){
-            const nuovoArray = aggiungi(riga, colonna, valore);
-            $("table").empty();
-            $("table").append("<tr>");
-            for(let j=0; j<9; j++){
-                $("table").append("<td>"+nuovoArray[cont]+"</td>");
-                cont++;
-            }
-            $("table").append("</tr>");
+        if(riga>=0 && riga<9 && colonna>=0 && colonna<9 && valore>0 && valore<10){
+            alert("sto per entrare in aggiungi");
+            aggiungi(riga, colonna, valore);
         }
         
     });
@@ -30,13 +26,23 @@ $(Document).ready(function(){
 });
 
 async function aggiungi(riga, colonna, valore){
+    alert("inizio");
     const responseId = await fetch("../php/getId.php",{method: "GET"});
     const id = await responseId.json();
+    alert(id.length);
     const num=id.length;
-    alert(id);
+    alert("modifica id:"+num);
     const response = await fetch("../php/controlloRisultato.php?riga="+riga+"&colonna="+colonna+"&valore="+valore+"&id="+num,{method: "GET"});
-    const result = await responde.json();
-    return result;
+    const result = await response.json();
+    $("table").empty();
+    for(let i=0; i<9; i++){
+        $("table").append("<tr>");
+        for(let j=0; j<9; j++){
+            $("table").append("<td>"+nuovoArray[cont]+"</td>");
+            cont++;
+        }
+        $("table").append("</tr>");
+    }
 }
 
 
@@ -59,5 +65,4 @@ async function getNuovaPartita(){
         $("table").append("</tr>");
     }
     $("form").show();
-    document.getElementById("form").reset();
 }
