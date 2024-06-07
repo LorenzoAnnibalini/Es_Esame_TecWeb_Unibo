@@ -6,7 +6,7 @@
 
     $cont=0;
 
-    if($_COOKIE["id"]==$id) {
+    //if($_COOKIE["id"]==$id) {
     
         $conn = new mysqli("localhost","root","","esami");
 
@@ -29,6 +29,6 @@
         $conn -> query($sql);
 
         echo json_encode($statoiniziale);
-    }
+    //}
 
 ?>
