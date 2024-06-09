@@ -2,7 +2,6 @@
     $input = $_REQUEST["action"];
     $conn = new mysqli("localhost","root","","lotto");
 
-
     if($input == "extract"){
         $sql = "SELECT * FROM estrazione";
         $result = $conn->query($sql);
@@ -15,10 +14,10 @@
             $sql = "INSERT INTO `estrazione`(`id`, `numero`) VALUES ('".(sizeof($rows)+1)."','".$num."')";
             $conn->query($sql);
         }else{
-            echo json_encode("ERRORE");
+            echo ("<input type='text' id='input' value='".json_encode("ERRORE")."' disabled>");
         }
     }else if($input == "new"){
-        echo json_encode("Reset");
+        echo ("<input type='text' id='input' value='".json_encode("Reset")."' disabled>");
         $sql = "DELETE  FROM estrazione";
         $conn->query($sql);
     }else if ($input == "check"){
@@ -38,11 +37,11 @@
             }
         }
         if($win == 5){
-            echo json_encode("HAI VINTO");
+            echo ("<input type='text' id='input' value='".json_encode("HAI VINTO")."' disabled>");
         }else{
-            echo json_encode("HAI PERSO");
+            echo ("<input type='text' id='input' value='".json_encode("HAI PERSO")."' disabled>");
         }
     }else{
-        echo json_encode("ERRORE");
+        echo ("<input type='text' id='input' value='".json_encode("ERRORE")."' disabled>");
     }
 ?>
