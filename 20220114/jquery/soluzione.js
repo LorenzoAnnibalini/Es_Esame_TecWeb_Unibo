@@ -17,6 +17,8 @@ $(document).ready(function(){
   console.log("Tabella creata");
     
   $("button").click(function(){
+    //$("table.copia").innerHTML = document.getElementsByTagName("table:not(.copia)");
+    document.getElementsByTagName("th").innerHTML="<h1>Ciao</h1>";
     $(".copia").show();
   });
 
